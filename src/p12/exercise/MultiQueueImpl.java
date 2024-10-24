@@ -1,15 +1,21 @@
 package p12.exercise;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class MultiQueueImpl<T, Q> implements MultiQueue<T, Q>{
 
+    private Set<Q> availableQ;
+
+    public MultiQueueImpl() {
+        this.availableQ = new HashSet<>();
+    }
+
     @Override
     public Set<Q> availableQueues() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'availableQueues'");
+        return this.availableQ;
     }
 
     @Override
