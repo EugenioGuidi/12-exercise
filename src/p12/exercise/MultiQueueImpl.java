@@ -20,8 +20,9 @@ public class MultiQueueImpl<T, Q> implements MultiQueue<T, Q>{
 
     @Override
     public void openNewQueue(Q queue) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'openNewQueue'");
+        if(!availableQ.add(queue)){
+            throw new IllegalArgumentException("Queue is already in the set");
+        }
     }
 
     @Override
